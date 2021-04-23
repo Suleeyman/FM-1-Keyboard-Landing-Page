@@ -1,0 +1,253 @@
+@use "src" as *;
+
+#header {
+    @include flex(row, space-between, center);
+
+    .order {
+        color: $dark-blue;
+        background-color: $light-blue;
+
+        &:hover {
+            color: white;
+            background-color: $dark-blue;
+        }
+
+    }
+}
+
+.intro-section {
+    margin-bottom: 3rem;
+    height: 50%;
+
+    .header-button {
+        @include flex(row, space-between, center);
+
+        .order {
+            background-color: $orange-red;
+            color: white;
+
+            &:hover {
+                color: $light-blue;
+                background-color: $orange-gray;
+            }
+
+        }
+
+        span {
+            font-weight: 700;
+            color: $grayish-blue;
+        }
+
+    }
+}
+
+main .image-1 {
+    width: calc(100% + 24px);
+    @include border-radius(20px, 0, 0, 20px);
+}
+
+.galerie {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    grid-template-rows: 193px auto;
+    margin-top: 1rem;
+    gap: 2rem 1rem;
+
+    header {
+        grid-row: -2 / -1;
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .image-2 {
+        width: calc(100% + 24px);
+        transform: translateX(-24px);
+        @include border-radius(0, 20px, 20px, 0);
+        background-color: $orange-red;
+        
+        img {
+            mix-blend-mode: multiply;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+}
+
+.card {
+
+    text-align: center;
+    margin-top: 4rem;
+
+    .img-bg {
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        background-color: $orange-red;
+        @include border-radius(16px, 16px, 16px, 16px);
+        height: 65px;
+        width: 65px;
+        margin: 0 auto 2rem;
+
+        img {
+            width: auto;
+            height: auto;
+        }
+
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+
+}
+
+footer p {
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 701px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        .intro-section {
+            height: 100%;
+            margin: 0;
+        }
+
+    }
+
+    .galerie {
+        grid-template-rows: 320px auto;
+        grid-template-columns: 0.35fr 1fr;
+
+        .image-2 {
+            transform: translateX(0);
+            width: 100%;
+            @include border-radius(20px, 20px, 20px, 20px);
+        }
+        
+    }
+
+    .galerie-header {
+        display: flex;
+
+        h2, p {
+            text-align: left;
+        }
+
+        p {
+            margin: 0;
+            padding: 1rem 0;
+        }
+    }
+
+    footer {
+        @include flex(row, space-between, flex-start);
+        flex-wrap: wrap;
+
+        .card {
+            flex-basis: 45%;
+            text-align: left;
+
+            .img-bg {
+                margin: 0 0 2rem;
+            }
+
+            p{
+                text-align: left;
+            }
+
+        }
+
+        p {
+            flex-basis: 100%;
+        }
+
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+
+    body {
+        padding: 4rem 8rem;
+    }
+
+    img {
+        @include border-radius(20px, 20px, 20px, 20px);
+    }
+
+    main {
+        position: relative;
+
+        .intro-section {
+            @include flex(column, center, auto);
+            width: 85%;
+        }
+
+        .image-1 {
+            width: 100%;
+        }
+
+        .grayish-square {
+            display: initial;
+            position: absolute;
+            top: 0; right: 0;
+            transform: translateX(110%);
+        }
+
+    }
+
+
+    .galerie {
+        position: relative;
+        grid-template-columns: 0.45fr 1fr .7fr;
+        grid-template-rows: 480px;
+
+        header {
+            flex-direction: column;
+            grid-column: -2 / -1;
+            grid-row: auto;
+            padding: 1rem;
+
+            h2 {
+                margin-top: auto;
+            }
+
+            p {
+                padding: 0;
+                margin-bottom: auto;
+            }
+            
+        }
+
+        .image-2 {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+        }
+
+        .image-3 {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+        }
+
+        .grayish-square {
+            display: initial;
+            position: absolute;
+            bottom: 0; left: 0;
+            transform: translateX(-110%);
+        }
+
+    }
+
+    footer {
+        .card {
+            flex-basis: 24%;
+        }
+    }
+
+}
