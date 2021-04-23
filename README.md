@@ -28,7 +28,7 @@ Mobile-first design.
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Github page](https://suleeyman.github.io/FM-1-Keyboard-Landing-Page/)
 
 ## My process
 
@@ -46,7 +46,7 @@ Then I created a display grid on the main content and the image gallery.
 ### What I learned
 
 I've learned about `<picture>` element. And to be honest, I've spend 5hours for finding this best solution for responsive images. I've tried
-the srcset on an unique 'img', but I've failed. Then I used this one:
+the  `srcset` on an unique `<img>`, but I've failed. Then I used this one:
 
 ```html
 <picture>
@@ -62,6 +62,7 @@ img {
 }
 ```
 Moreover, I've learned how to create basic SCSS folder with @use and @forward.
+And finally, how to create a .md file and how to host my repository.
 ```scss
 @forward "mixins";
 @forward "variables";
