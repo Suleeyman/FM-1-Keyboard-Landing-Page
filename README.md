@@ -27,7 +27,7 @@ Mobile-first design.
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/keyboard-landing-page-with-scss-wWbWu8ncp)
 - Live Site URL: [Github page](https://suleeyman.github.io/FM-1-Keyboard-Landing-Page/)
 
 ## My process
